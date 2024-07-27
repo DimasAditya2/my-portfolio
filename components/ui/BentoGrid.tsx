@@ -56,16 +56,6 @@ export const BentoGridItem = ({
     }
   };
 
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-
-    if (copied) {
-      timer = setTimeout(() => setCopied(false), 2000);
-    }
-
-    return () => clearTimeout(timer);
-  }, [copied]);
-
   return (
     <div
       className={cn(
@@ -146,9 +136,6 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              {copied && (
-                <div className="text-green-500 mb-2">Email copied!</div>
-              )}
               <MagicButton
                 title={copied ? 'Email copied' : 'Copy my email'}
                 icon={<IoCopyOutline />}

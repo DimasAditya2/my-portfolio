@@ -3,6 +3,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenereateEffext";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
+import Greeting from "./ui/Greeting";
 
 const Hero = () => {
   return (
@@ -21,16 +22,25 @@ const Hero = () => {
         <div className="flex justify-center relative my-20 z-10">
           <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
             <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-              Dinamic Web Magic With Next.js
+              <div className="mb-4 inline-block text-white rounded-sm mr-1">
+                <Greeting />
+              </div>
+            Welcome to My PortFolio
             </h2>
             <TextGenerateEffect
               className="text-center text-[40px] md:text-5xl lg:text-6xl"
-              words="Transforming Concepts into Seamless User Experiences"
+              words="Full of enthusiasm and ready to face new challenges in software development"
             />
 
-            <p className="text-center md:tracking-wider mb-4 md:text-lg lg:text-2xl">Hi, I&apos;am Dimas, a Full Stack Developer</p>
+            <p className="text-center md:tracking-wider mb-4 md:text-lg lg:text-2xl">
+              Hi, I&apos;am Dimas, a Full Stack Developer
+            </p>
             <a href="#projects">
-              <MagicButton title='Show my work' icon={<FaLocationArrow/>} position="right"/>
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
             </a>
           </div>
         </div>
