@@ -28,8 +28,8 @@ const Hero = () => {
               words="Transforming Concepts into Seamless User Experiences"
             />
 
-            <p className="text-center md:tracking-wider mb-4 md:text-lg lg:text-2xl">Hi, I&apos;am Dimas, a Next.js Developer</p>
-            <a href="#about">
+            <p className="text-center md:tracking-wider mb-4 md:text-lg lg:text-2xl">Hi, I&apos;am Dimas, a Full Stack Developer</p>
+            <a href="#projects">
               <MagicButton title='Show my work' icon={<FaLocationArrow/>} position="right"/>
             </a>
           </div>

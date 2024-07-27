@@ -24,7 +24,8 @@ const RecentProject = () => {
                 <img src={img} alt={title} className="z-10 absolute bottom-0" />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {title}
+                {title + " "} 
+                {id === 1 && <span className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-2 rounded-lg absolute right-0">New</span>}
               </h1>
               <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
                 {des}
@@ -45,7 +46,7 @@ const RecentProject = () => {
                   ))}
                 </div>
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">Check Live site</p>
+                  <p className="flex lg:text-xl md:text-xs text-sm text-purple line-through">{id === 1 ? "Check" : "Check Live site"}</p>
                   <FaLocationArrow className="ms-3" color="#CBACF9"/>
                 </div>
               </div>
