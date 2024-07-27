@@ -8,8 +8,10 @@ const Greeting = () => {
 
     if (currentHour < 12) {
       return 'Good Morning';
+    } else if (currentHour < 15) {
+      return 'Good Afternoon';
     } else if (currentHour < 18) {
-      return 'Good afternoon';
+      return 'Good Evening';
     } else {
       return 'Good Night';
     }

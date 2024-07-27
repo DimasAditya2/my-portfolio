@@ -12,9 +12,6 @@ export default function Home() {
         <Hero />
         <Grid/>
         <RecentProject/>
-        <div className="flex justify-center items-center mb-5 h-10">
-        <p className="text-white opacity-50 text-xs lg:text-sm">inspiration from javascript mastery</p>
-      </div>
       </div>
     </main>
   );
