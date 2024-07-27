@@ -1,12 +1,12 @@
-'use client'
+'use client';
+
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./BgGradient";
 import { GlobeDemo } from "./GridGlobe";
-import { useState } from "react";
-import animationData from '@/data/confetti.json'
-import Lottie from "react-lottie";
+import { useState, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import MagicButton from "./MagicButton";
+
 export const BentoGrid = ({
   className,
   children,
@@ -27,14 +27,14 @@ export const BentoGrid = ({
 };
 
 export const BentoGridItem = ({
-  className,
-  title,
-  description,
-  id,
-  img,
-  imgClassName,
-  titleClassName,
-  spareImg,
+  className = '',
+  title = '',
+  description = '',
+  id = 0,
+  img = '',
+  imgClassName = '',
+  titleClassName = '',
+  spareImg = '',
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -48,10 +48,24 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+
   const handleCopy = () => {
-    navigator.clipboard.writeText('esadimasadityaa@gmail.com')
-    setCopied(true)
-  }
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText('esadimasadityaa@gmail.com');
+      setCopied(true);
+    }
+  };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (copied) {
+      timer = setTimeout(() => setCopied(false), 2000);
+    }
+
+    return () => clearTimeout(timer);
+  }, [copied]);
+
   return (
     <div
       className={cn(
@@ -118,7 +132,7 @@ export const BentoGridItem = ({
                 <span className="py-4 rounded-lg text-center bg-[#10132E]"></span>
               </div>
               <div className="flex flex-col gap-3 lg:gap-8">
-              <span className="py-4 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="py-4 rounded-lg text-center bg-[#10132E]"></span>
                 {["MongoDb", "Sequelize", "Express"].map((item) => (
                   <span
                     key={item}
@@ -132,23 +146,16 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-                <div className={`absolute -bottom-5 right-0`}>
-                  <Lottie options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice',
-                    }
-                  }}/>
-                </div>
-                <MagicButton
+              {copied && (
+                <div className="text-green-500 mb-2">Email copied!</div>
+              )}
+              <MagicButton
                 title={copied ? 'Email copied' : 'Copy my email'}
-                icon={<IoCopyOutline/>}
-                position='left'
+                icon={<IoCopyOutline />}
+                position="left"
                 otherClasses="!bg-[#161a31]"
                 handleClick={handleCopy}
-                />
+              />
             </div>
           )}
         </div>
@@ -156,4 +163,3 @@ export const BentoGridItem = ({
     </div>
   );
 };
-
