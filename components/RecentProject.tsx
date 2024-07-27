@@ -46,7 +46,7 @@ const RecentProject = () => {
                   ))}
                 </div>
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple line-through">{id === 1 ? "Check" : "Check Live site"}</p>
+                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">Check</p>
                   <FaLocationArrow className="ms-3" color="#CBACF9"/>
                 </div>
               </div>
