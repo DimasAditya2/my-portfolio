@@ -2,6 +2,9 @@
 
 Ini adalah repository untuk website portofolio saya, yang menampilkan proyek-proyek dan keterampilan yang telah saya kembangkan.
 
+## Link Deploy
+- https://dimas-portfolio-six.vercel.app/
+
 ## Fitur
 
 - **Responsive Design:** Dapat diakses dengan baik dari berbagai perangkat, termasuk desktop, tablet, dan ponsel.
